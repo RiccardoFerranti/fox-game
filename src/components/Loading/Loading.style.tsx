@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const StyledSpinnerContainer =  styled.div`
 	display: flex;
   align-items: center;
-	margin-top: 100px;
+	margin-top: 50px;
   flex-direction: column;
 
   img {

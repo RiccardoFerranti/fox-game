@@ -13,15 +13,25 @@ export interface IScoreBoard {
 export interface IGameState {
   username: string,
   scoreBoard: Array<IScoreBoard>,
+  settings: {
+    music: boolean,
+    timer: number,
+    language: string
+  },
   timer: TTimer,
-  music: boolean
+}
+
+const defaultSettings = {
+  music: true,
+  timer: 30,
+  language: 'English'
 }
 
 export const initialState: IGameState = {
   username: '',
   scoreBoard: [],
+  settings: defaultSettings,
   timer: 'idle',
-  music: true
 };
 
 export const gameSlice = createSlice({
@@ -55,10 +65,19 @@ export const gameSlice = createSlice({
       state.timer = payload;
     },
     setMusic: (state, { payload }: PayloadAction<boolean>) => {
-      state.music = payload;
+      state.settings.music = payload;
+    },
+    setTimer: (state, { payload }: PayloadAction<string>) => {
+      state.settings.timer = +payload;
+    },
+    setLanguage: (state, { payload }: PayloadAction<string>) => {
+      state.settings.language = payload;
+    },
+    setDefaultSettings: (state) => {
+      state.settings = defaultSettings;
     },
   },
 });
 
-export const { setUsername, setScoreBoard, setTimerStatus, setMusic } = gameSlice.actions;
+export const { setUsername, setScoreBoard, setTimerStatus, setMusic, setTimer, setLanguage, setDefaultSettings } = gameSlice.actions;
 export default gameSlice.reducer;

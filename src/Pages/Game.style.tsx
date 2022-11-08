@@ -10,7 +10,7 @@ export const StyledOverlay = styled.div`
   position: absolute;
   width: 400px;
   height: 400px;
-  top: 98px;
+  top: 125px;
   left: 50px;
   color: white;
   font-size: 30px;

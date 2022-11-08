@@ -93,7 +93,7 @@ const Layout: FC<ILayoutProps> = ({ children }) => {
       <AnimatedBackground />
       <StyledLayout>
         <StyledGameContainer>
-          <StyleGameTitle>Click the Fox! Game</StyleGameTitle>
+          <StyleGameTitle><span>Catch the Fox</span></StyleGameTitle>
           {children}
         </StyledGameContainer>
       </StyledLayout>

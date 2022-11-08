@@ -112,18 +112,16 @@ const Game: FC = () => {
   const startTheGameTimer = startTimer === 0;
 
   return (
-    <>
-      <StyledGameContainer>
-        {timerStatus === 'end' ? <StyledOverlay><p>The time is finished</p></StyledOverlay> : null}
-        {startTheTimer ? <StyledOverlay><StyledStartTimer>{startTimer}</StyledStartTimer></StyledOverlay> : null}
-        <SoundPlayer start={startTheGameTimer} timerStatus={timerStatus} />
-        <StyledGameSettings>
-          <Score score={score} />
-          <Timer start={startTheGameTimer} />
-        </StyledGameSettings>
-        <Board images={imagesToRender} handleClickImage={clickImage} />
-      </StyledGameContainer>
-    </>
+    <StyledGameContainer>
+      {timerStatus === 'end' ? <StyledOverlay><p>The time is finished</p></StyledOverlay> : null}
+      {startTheTimer ? <StyledOverlay><StyledStartTimer>{startTimer}</StyledStartTimer></StyledOverlay> : null}
+      <SoundPlayer start={startTheGameTimer} timerStatus={timerStatus} />
+      <StyledGameSettings>
+        <Score score={score} />
+        <Timer start={startTheGameTimer} />
+      </StyledGameSettings>
+      <Board images={imagesToRender} handleClickImage={clickImage} />
+    </StyledGameContainer>
   )
 }
 

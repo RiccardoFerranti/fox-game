@@ -4,7 +4,7 @@ export const StyledBoardWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 12px;
 `;
 
 export const StyledBoard = styled.div`

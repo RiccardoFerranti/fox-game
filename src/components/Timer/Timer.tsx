@@ -1,21 +1,21 @@
 import { FC, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
-import { DEFAULT_TIMER } from '../../consts/general';
 import { useRecord } from '../../RecordContext';
-import { gameSelectorTimer } from '../../redux/game/game.selector';
+import { gameSelectorSettingsTimer, gameSelectorTimer } from '../../redux/game/game.selector';
 import { setTimerStatus } from '../../redux/game/game.slice';
 import { useAppDispatch } from '../../redux/store';
 
 export interface ITimerProps {
   start: boolean,
-  startTimer?: number,
 }
 
-const Timer: FC<ITimerProps> = ({ start, startTimer = DEFAULT_TIMER }) => {
+const Timer: FC<ITimerProps> = ({ start }) => {
+  const startTimer = useSelector(gameSelectorSettingsTimer);
   const [timer, setTimer] = useState(startTimer);
-  const { loading } = useRecord();
+
   const timerStatus = useSelector(gameSelectorTimer);
+  const { loading } = useRecord();
   const dispatch = useAppDispatch();
 
   useEffect(() => {

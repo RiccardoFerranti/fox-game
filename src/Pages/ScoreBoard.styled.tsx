@@ -5,7 +5,7 @@ import { StyledButton } from "./CommonStyle";
 export const StyledScoreTile = styled.h2`
   text-align: center;
   margin: 15px 0;
-  font-size: 16px;
+  font-size: 20px;
   text-transform: uppercase;
 `
 

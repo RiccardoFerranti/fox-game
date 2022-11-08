@@ -6,13 +6,14 @@ export const StyledWelcomeContainer = styled.div`
   height: 400px;
   width: 380px;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
 `
 
 interface IStyledNextButton {
   disabled: boolean,
 }
 export const StyledNextButton = styled(StyledButton)<IStyledNextButton>`
+  font-size: 26px;
   margin-bottom: 30px;
   background: ${({ disabled, theme }) => disabled ? theme.buttons.play.inactive : theme.buttons.play.active};
   color: ${({ disabled, theme }) => disabled ? theme.buttons.play.textInactive : theme.buttons.play.textActive};
@@ -20,6 +21,7 @@ export const StyledNextButton = styled(StyledButton)<IStyledNextButton>`
 `
 
 export const StyledPlayButton = styled(StyledButton)`
+  font-size: 26px;
   margin-bottom: 30px;
   background: ${({ theme }) => theme.buttons.play.active};
   color: ${({ theme }) => theme.buttons.play.textActive};
@@ -27,11 +29,23 @@ export const StyledPlayButton = styled(StyledButton)`
 `
 
 export const StyledUsername = styled.p`
+  display: flex;
   font-size: 18px;
   align-self: center;
   margin: 30px 0 0 0;
   color: ${({ theme }) => theme.colors.text};
-  cursor: pointer;
+
+  strong {
+    margin-left: 5px;
+    margin-right: 10px;
+  }
+
+  svg{
+    align-self: center;
+    align-items: center;
+    font-size: 20px;
+    cursor: pointer;
+  }
 `
 
 export const StyledPlayInstructions = styled.div`
