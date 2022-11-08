@@ -2,6 +2,7 @@ import { ChangeEvent, FC, useState } from 'react';
 
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { AiFillEdit } from "react-icons/ai";
 
 import { StyledGameContainer } from './CommonStyle';
 import {
@@ -16,6 +17,7 @@ import {
 import { gameSelectorUsername } from '../redux/game/game.selector';
 import { setUsername } from '../redux/game/game.slice';
 import { useAppDispatch } from '../redux/store';
+import Commands from '../components/Commands/Commands';
 
 const Welcome: FC = () => {
   const [ showName, setShowName ] =  useState(false);
@@ -41,14 +43,16 @@ const Welcome: FC = () => {
 
   return (
     <StyledGameContainer>
+      <Commands />
       {showName
         ? 
           <>
-            <StyledUsername onClick={nextStep} title="click to change the name" data-testid="username-label">
+            <StyledUsername title="click to change the name" data-testid="username-label">
               Hello <strong>{username}</strong>
+              <AiFillEdit  onClick={nextStep} />
             </StyledUsername>
             <StyledPlayInstructions>
-              <p>Click over the name to change it</p>
+              <p>Click over the icon to change the name</p>
               <p>Or</p>
               <p>Click play button to start the game</p>
             </StyledPlayInstructions>

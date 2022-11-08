@@ -10,6 +10,7 @@ import ErrorMessage from '../components/Error/Error';
 import { useRecord } from '../RecordContext';
 import Loading from '../components/Loading/Loading';
 import { ERROR_MESSAGE } from '../consts/general';
+import Commands from '../components/Commands/Commands';
 
 const Splash: FC = () => {
   const navigate = useNavigate()
@@ -24,25 +25,24 @@ const Splash: FC = () => {
   }
 
   return (
-    <>
-      <StyledGameContainer>
-        <StyledFoxLogo src={fox} alt='fox face' title='fox logo face' data-testid='fox-logo-face' />
-        <StyledDescription>Click the fox as many times as you can within 30 seconds</StyledDescription>
-        {loading
-          ? 
-            <Loading message='Initializing' />
-          :
-          <StyledStartButton 
-            type='button'
-            id='start-buttonn'
-            onClick={() => navigate('/welcome')}
-            aria-label='start-button'
-          >
-            START
-          </StyledStartButton>
-        }
-      </StyledGameContainer>
-    </>
+    <StyledGameContainer>
+      <Commands />
+      <StyledFoxLogo src={fox} alt='fox face' title='fox logo face' data-testid='fox-logo-face' />
+      <StyledDescription>Click the fox as many times as you can within 30 seconds</StyledDescription>
+      {loading
+        ? 
+          <Loading message='Initializing' />
+        :
+        <StyledStartButton 
+          type='button'
+          id='start-buttonn'
+          onClick={() => navigate('/welcome')}
+          aria-label='start-button'
+        >
+          START
+        </StyledStartButton>
+      }
+    </StyledGameContainer>
   )
 }
 

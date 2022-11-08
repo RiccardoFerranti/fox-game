@@ -3,9 +3,14 @@ import styled from "styled-components";
 export const StyledGameContainer = styled.div`
   height: 485px;
   width: 500px;
-  padding: 0 15px 15px 15px;
+  padding: 15px 15px 15px 15px;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
+
+  span {
+    font-size: 18px;
+    margin-right: 15px;
+  }
 `
 
 export const StyledButton = styled.button`

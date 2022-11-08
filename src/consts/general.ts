@@ -13,3 +13,15 @@ export const NUMBER_FOXES_FETCHED = 50;
 export const DEFAULT_TIMER = 30;
 
 export const ERROR_MESSAGE = 'Something went wrong loading images, please try to refresh the page';
+
+export const INTERVALS_TIMER_OPTIONS = [
+  { label: '30', value: '30' },
+  { label: '60', value: '60' },
+  { label: '90', value: '90' },
+  { label: '120', value: '120' }
+];
+
+export const LANGUAGE_OPTIONS = [
+  { label: 'EN', value: 'en' },
+  { label: 'IT', value: 'it' },
+];

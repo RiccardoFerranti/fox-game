@@ -7,7 +7,7 @@ import { HiSpeakerWave, HiSpeakerXMark } from "react-icons/hi2";
 import { StyledSoundPlayerWrapper } from "./SoundPlayer.styled";
 
 import hopstepchance from "../../music/hopstepchance.mp3";
-import { gameSelectorMusic } from "../../redux/game/game.selector";
+import { gameSelectorSettingsMusic } from "../../redux/game/game.selector";
 import { useAppDispatch } from "../../redux/store";
 import { setMusic } from "../../redux/game/game.slice";
 
@@ -17,10 +17,10 @@ export interface ISoundPlayerProps {
 }
 
 const SoundPlayer: FC<ISoundPlayerProps> = ({ start, timerStatus }) => {
-  const isMusicOn = useSelector(gameSelectorMusic);
+  const isMusicOn = useSelector(gameSelectorSettingsMusic);
   const dispatch = useAppDispatch();
   
-  const audio = useMemo(()=> new Audio(hopstepchance), []);
+  const audio = useMemo(() => new Audio(hopstepchance), []);
 
   const handleSetMusicOn = () => { dispatch(setMusic(false)) }
   const handleSetMusicOff = () => { dispatch(setMusic(true)) }
@@ -42,6 +42,13 @@ const SoundPlayer: FC<ISoundPlayerProps> = ({ start, timerStatus }) => {
       audio.currentTime = 0;
     }
   }, [timerStatus, audio, isMusicOn])
+
+  useEffect(() => {
+    return () => {
+      audio.pause();
+      audio.currentTime = 0;
+    }
+}, [audio])
 
   return (
     <StyledSoundPlayerWrapper>

@@ -7,7 +7,7 @@ export const StyledSoundPlayerWrapper = styled.div`
   cursor: pointer;
 
   svg {
-    font-size: 24px;
-    color: #3D3D3D;
+    font-size: 28px;
+    color: #00688e;
   }
 `
