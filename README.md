@@ -13,7 +13,7 @@ The results are stored in localstorage for persistence of data.
 
 The app is fully covered by test using Jest and RTL.
 
-One last thing, if in console and test you see this warning: `react-dom.development.js:86 Warning: Invalid ARIA attribute ariaHidden. Did you mean aria-hidden?`, it is due to a problem with particular set of `react-icons`, there is a pull request opened to fix this warning https://github.com/react-icons/react-icons/pull/630.
+If in console and test there is this warning: `react-dom.development.js:86 Warning: Invalid ARIA attribute ariaHidden. Did you mean aria-hidden?`, it is due to a problem with particular set of `react-icons`, there is a pull request opened to fix this warning https://github.com/react-icons/react-icons/pull/630.
 
 ## Available Scripts
 node version: `>=18.0.0`
